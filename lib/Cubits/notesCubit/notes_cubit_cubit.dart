@@ -8,16 +8,12 @@ import 'package:noteapptharwat/Models/Note_model.dart';
 part 'notes_cubit_state.dart';
 
 class NotesCubitCubit extends Cubit<NotesCubitState> {
+  List<NoteModel>? notesList;
   NotesCubitCubit() : super(NotesCubitInitial());
 
   fetchAllNotes() async {
-    try {
-      final notesBox = Hive.box<NoteModel>(kNotesBox);
+    final notesBox = Hive.box<NoteModel>(kNotesBox);
 
-      List<NoteModel> notesList = notesBox.values.toList();
-      emit(NotesCubitSucsess(notesList));
-    } on Exception catch (e) {
-      emit(NotesCubitFaliure(e.toString()));
-    }
+    notesList = notesBox.values.toList();
   }
 }

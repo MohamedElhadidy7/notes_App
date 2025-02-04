@@ -23,9 +23,9 @@ class CustomTextField extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hint,
         hintStyle: const TextStyle(color: kPrimaryColor),
-        border: buildBorder(),
-        enabledBorder: buildBorder(),
-        focusedBorder: buildBorder(kPrimaryColor),
+        border: buildBorder(kPrimaryColor),
+        enabledBorder: buildBorder(kPrimaryColor),
+        focusedBorder: buildBorder(Colors.brown),
       ),
     );
   }
