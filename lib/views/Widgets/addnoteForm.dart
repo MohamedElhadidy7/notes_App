@@ -4,6 +4,7 @@ import 'package:noteapptharwat/Cubits/AddNote_Cubit/add_note_cubit.dart';
 import 'package:noteapptharwat/Models/Note_model.dart';
 import 'package:noteapptharwat/views/Widgets/Custom_Textfield.dart';
 import 'package:noteapptharwat/views/Widgets/Custom_buttom.dart';
+import 'package:intl/intl.dart';
 
 class AddNoteForm extends StatefulWidget {
   const AddNoteForm({
@@ -55,10 +56,13 @@ class _AddNoteFormState extends State<AddNoteForm> {
                 onTap: () {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
+                    var currentdate = DateTime.now();
+                    var formatedcurrentdate =
+                        DateFormat.yMd().format(currentdate);
                     var notemodel = NoteModel(
                       title: tittle!,
                       subtitle: subtittle!,
-                      date: DateTime.now().toString(),
+                      date: formatedcurrentdate,
                       Color: Colors.blue.value,
                     );
                     BlocProvider.of<AddNoteCubit>(context).addNote(notemodel);
