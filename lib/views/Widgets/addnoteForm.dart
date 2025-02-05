@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:noteapptharwat/Constants.dart';
 import 'package:noteapptharwat/Cubits/AddNote_Cubit/add_note_cubit.dart';
 import 'package:noteapptharwat/Models/Note_model.dart';
+import 'package:noteapptharwat/views/Widgets/Colors_ListView.dart';
 import 'package:noteapptharwat/views/Widgets/Custom_Textfield.dart';
 import 'package:noteapptharwat/views/Widgets/Custom_buttom.dart';
 import 'package:intl/intl.dart';
@@ -46,6 +48,10 @@ class _AddNoteFormState extends State<AddNoteForm> {
             hint: 'Content',
             maxlines: 5,
           ),
+          const SizedBox(
+            height: 32,
+          ),
+          ColorsListView(),
           const SizedBox(
             height: 32,
           ),
