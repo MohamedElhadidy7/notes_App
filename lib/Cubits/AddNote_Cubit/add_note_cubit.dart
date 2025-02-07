@@ -9,7 +9,7 @@ part 'add_note_state.dart';
 
 class AddNoteCubit extends Cubit<AddNoteState> {
   AddNoteCubit() : super(AddNoteInitial());
-  Color color = const Color(0xff484041);
+  Color color = const Color(0xff4357AD);
 
   addNote(NoteModel note) async {
     note.Color = color.value;

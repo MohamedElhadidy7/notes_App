@@ -1,11 +1,16 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:noteapptharwat/Cubits/notesCubit/notes_cubit_cubit.dart';
 
+import 'package:noteapptharwat/Constants.dart';
+import 'package:noteapptharwat/Cubits/AddNote_Cubit/add_note_cubit.dart';
+import 'package:noteapptharwat/Cubits/notesCubit/notes_cubit_cubit.dart';
 import 'package:noteapptharwat/Models/Note_model.dart';
+import 'package:noteapptharwat/views/Widgets/Colors_ListView.dart';
+import 'package:noteapptharwat/views/Widgets/Colors_item.dart';
 import 'package:noteapptharwat/views/Widgets/Custom_Textfield.dart';
 import 'package:noteapptharwat/views/Widgets/Custom_appBar.dart';
+import 'package:noteapptharwat/views/Widgets/EditnoteColorList.dart';
 
 class EditViewBody extends StatefulWidget {
   const EditViewBody({
@@ -59,6 +64,12 @@ class _EditViewBodyState extends State<EditViewBody> {
               },
               hint: widget.note.subtitle,
               maxlines: 5,
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            EditnoteColorsList(
+              note: widget.note,
             ),
           ],
         ),
